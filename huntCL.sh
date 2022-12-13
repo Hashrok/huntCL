@@ -23,11 +23,11 @@ function menu() {
   
   for site in $(cat $list); 
 do
-	if [[ $(curl -s -m 2 -A "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0" "${site}/$filename" -w %{http_code} -o /dev/null ) =~ '403' ]]; then  
-  	echo -e "" 
+	if [[ $(curl -s -m 3 -A "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0" "${site}/$filename" -w %{http_code} -o /dev/null ) =~ '403' ]]; then  
+  	echo "" 
 	fi
 
-    if [[ $(curl --connect-timeout 2 --max-time 2 -kLs "${site}/$filename" ) =~ "$text" ]]; then
+    if [[ $(curl --connect-timeout 3 --max-time 3 -kLs "${site}/$filename" ) =~ "$text" ]]; then
 		echo -e "$green""[+] Your search options have been detected on this server " "$white" 
     echo -e "${site}" | tee -a ./database/DB-$list
     echo ""
