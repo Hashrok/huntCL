@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#COLORS
 red="\033[1;31m"
 green="\033[1;32m"
 white="\033[1;37m"
